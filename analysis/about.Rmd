@@ -13,14 +13,36 @@ This project is about enrichment analysis of 44 tissues of eQTL in GTEx, which i
 
 I have analyzed the enrichment of eQTLs in various tissues on SCZ, and the results of enrichment of all tissues and significantly enriched tissues are shown as Figure 1.
 
-![Figure 1: (a): enrichment of all tissues.](/Users/cjr/Documents/留学/暑研/Xin/reading_materials/5th/enrichment_analysis_SCZ_cis-eQTLs.png)
-![(b): enrichment of significantly enriched tissues.](/Users/cjr/Documents/留学/暑研/Xin/reading_materials/5th/significant_enrichment_SCZ_cis-eQTLs.png)
+```{r, echo = F}
+library(png)
+enrichment_img <- readPNG(source = '/Users/cjr/Documents/留学/暑研/Xin/reading_materials/5th/enrichment_analysis_SCZ_cis-eQTLs.png')
+library(grid)
+grid.raster(enrichment_img)
+```
+
+Figure 1: (a): enrichment of all tissues.
+
+```{r, echo = F}
+library(png)
+significant_enrichment_img <- readPNG(source = '/Users/cjr/Documents/留学/暑研/Xin/reading_materials/5th/significant_enrichment_SCZ_cis-eQTLs.png')
+library(grid)
+grid.raster(significant_enrichment_img)
+```
+
+(b): enrichment of significantly enriched tissues.
 
 The threshold of significant enrichment is set to be 'lower bound > 0.1'. It is apparent that most significantly enriched cis-eQTLs are in brain tissues. Besides, most brain tissues in the given data are significantly enriched for cis-eQTLs, which is obvious by checking the original data and comparing tissues in Figure 1(a) and (b). This result suggests that brain cis-eQTLs are good annotations for schizophrenia and that schizophrenia is regulated by gene expression mainly in brain.
 
 I have also analyzed the enrichment of some enhancers and H3K27ac peaks on SCZ, whose results are in Figure 2.
 
-![Figure 2: enrichment of PEC enhancers (03a/b, 04a/b) and H3K27 peaks for PFC (05), TC (06) and CBC (07).](/Users/cjr/Documents/留学/暑研/Xin/reading_materials/5th/enrichment_analysis_DER.png)
+```{r echo = F}
+library(png)
+DER_enrichment_img <- readPNG(source = '/Users/cjr/Documents/留学/暑研/Xin/reading_materials/5th/enrichment_analysis_DER.png')
+library(grid)
+grid.raster(DER_enrichment_img)
+```
+
+Figure 2: enrichment of PEC enhancers (03a/b, 04a/b) and H3K27 peaks for PFC (05), TC (06) and CBC (07).
 
 First, PEC enhancers. 04a/b are hg38 version of 03a/b, which belong to hg19. However, 04a/b has no enrichment, possibly because hg38 is incompatible to the SCZGWAS data. (hg38 is improved from hg19, such as adding alternate loci)
 
