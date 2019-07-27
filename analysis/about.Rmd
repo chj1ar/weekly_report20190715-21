@@ -8,11 +8,3 @@ editor_options:
 ---
 
 Describe your project.
-
-This project is about enrichment analysis of 44 tissues of eQTL in GTEx, which is performed in 2 ways. One is performed in binary annotations, and the other is in PIPs, i.e., continuous annotations.
-
-Please see the results as follows.
-
-* [SCZ against binary annotations of GTEx eQTLs](binary.html)
-
-* [SCZ against PIPs of GTEx eQTLs](PIP.html)
