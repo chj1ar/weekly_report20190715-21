@@ -1,0 +1,34 @@
+---
+title: "PIP"
+author: "chj1ar"
+date: "2019-07-27"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+I have used PIPs of GTEx eQTLs as annotations, and the results are terrible. Please see Figure 1.
+
+```{r, echo=FALSE}
+library(png)
+PIP_img <- readPNG(source = '/Users/cjr/Documents/留学/暑研/Xin/reading_materials/5th/PIP_messy.png')
+library(grid)
+grid.raster(PIP_img)
+```
+
+Figure 1: enrichment of PIPs.
+
+And the data are shown in Table 1.
+
+```{r, echo=FALSE}
+PIP_table <- read.csv(file = '/Users/cjr/Documents/留学/暑研/Xin/reading_materials/5th/PIP_messy.csv', sep = '\t', header = TRUE)
+library(knitr)
+kable(PIP_table, caption = 'SCZ against PIP')
+```
+
+Table 1: enrichment of PIPs.
+
+Generally speaking, the standard deviation is approximately 100 times as much as log odds ratio in each tissue, regardless of whether in brain or not.
+
+As for the reason why the results are so awful, it is probably that continuous annotations are usually unstable.
+

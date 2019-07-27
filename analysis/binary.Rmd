@@ -1,0 +1,47 @@
+---
+title: "binary"
+author: "chj1ar"
+date: "2019-07-27"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+I have analyzed the enrichment of eQTLs in various tissues on SCZ, and the results of enrichment of all tissues and significantly enriched tissues are shown as Figure 1.
+
+```{r, echo = F}
+library(png)
+enrichment_img <- readPNG(source = '/Users/cjr/Documents/留学/暑研/Xin/reading_materials/5th/enrichment_analysis_SCZ_cis-eQTLs.png')
+library(grid)
+grid.raster(enrichment_img)
+```
+
+Figure 1: (a): enrichment of all tissues.
+
+```{r, echo = F}
+library(png)
+significant_enrichment_img <- readPNG(source = '/Users/cjr/Documents/留学/暑研/Xin/reading_materials/5th/significant_enrichment_SCZ_cis-eQTLs.png')
+library(grid)
+grid.raster(significant_enrichment_img)
+```
+
+(b): enrichment of significantly enriched tissues.
+
+The threshold of significant enrichment is set to be 'lower bound > 0.1'. It is apparent that most significantly enriched cis-eQTLs are in brain tissues. Besides, most brain tissues in the given data are significantly enriched for cis-eQTLs, which is obvious by checking the original data and comparing tissues in Figure 1(a) and (b). This result suggests that brain cis-eQTLs are good annotations for schizophrenia and that schizophrenia is regulated by gene expression mainly in brain.
+
+I have also analyzed the enrichment of some enhancers and H3K27ac peaks on SCZ, whose results are in Figure 2.
+
+```{r echo = F}
+library(png)
+DER_enrichment_img <- readPNG(source = '/Users/cjr/Documents/留学/暑研/Xin/reading_materials/5th/enrichment_analysis_DER.png')
+library(grid)
+grid.raster(DER_enrichment_img)
+```
+
+Figure 2: enrichment of PEC enhancers (03a/b, 04a/b) and H3K27 peaks for PFC (05), TC (06) and CBC (07).
+
+First, PEC enhancers. 04a/b are hg38 version of 03a/b, which belong to hg19. However, 04a/b has no enrichment, possibly because hg38 is incompatible to the SCZGWAS data. (hg38 is improved from hg19, such as adding alternate loci)
+
+H3K27ac peaks for the PFC, TC and CBC are all enriched, suggesting the role of H3K27ac, an active enhancer mark, on SCZ in those tissues, which is consistent with the result of PEC enhancers.
+
+Actually, both Figure 1 and Figure 2 are somewhat unexpected. First, in Figure 2, the enrichment of DER03b is so high (e^3.75 = 42.5 folds of enrichment). Second, in Figure 1, the enrichments of those brain tissues are really low (the most highly enriched one is still only e^0.6 = 1.8 folds of enrichment). (But how to judge high or low enrichment?)
