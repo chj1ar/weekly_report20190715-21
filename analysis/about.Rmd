@@ -13,5 +13,6 @@ This project is about enrichment analysis of 44 tissues of eQTL in GTEx, which i
 
 Please see the results as follows.
 
-[SCZ against binary annotations of GTEx eQTLs](binary.Rmd)
-[SCZ against PIPs of GTEx eQTLs](PIP.Rmd)
+* [SCZ against binary annotations of GTEx eQTLs](binary.html)
+
+* [SCZ against PIPs of GTEx eQTLs](PIP.html)
