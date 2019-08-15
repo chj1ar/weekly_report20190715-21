@@ -15,3 +15,7 @@ Please see the results as follows.
 * [SCZ against binary annotations of GTEx eQTLs](binary.html)
 
 * [SCZ against PIPs of GTEx eQTLs](PIP.html)
+
+* [diagnosis of enrichment analysis by QQ plots](diagnosis_QQplot.html)
+
+* [colocalization analysis of brain eQTLs on SCZ by Enloc](colocalization.html)

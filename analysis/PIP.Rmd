@@ -30,5 +30,7 @@ Table 1: enrichment of PIPs.
 
 Generally speaking, the standard deviation is approximately 100 times as much as log odds ratio in each tissue, regardless of whether in brain or not.
 
-As for the reason why the results are so awful, it is probably that continuous annotations are usually unstable.
+Even if the annotations are set according to a threshold for PIP, i.e., 1 if PIP > the threshold and 0 otherwise, the results are still similar.
+
+One possible reason is that there are too few eQTL SNPs of SCZ, in which case Torus does not work well.
 
