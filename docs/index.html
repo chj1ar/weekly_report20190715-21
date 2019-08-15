@@ -333,7 +333,7 @@ div.section {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2019-07-27
+<strong>Last updated:</strong> 2019-08-15
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -364,10 +364,10 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomchj1arweeklyreport2019071521treed1549f5d716bafdb3d4ff19b37bc92e51922288atargetblankd1549f5a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/chj1ar/weekly_report20190715-21/tree/d1549f5d716bafdb3d4ff19b37bc92e51922288a" target="_blank">d1549f5</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomchj1arweeklyreport2019071521tree25038afc6299fbd1d48d551f74b0775b6dedcf51targetblank25038afa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/chj1ar/weekly_report20190715-21/tree/25038afc6299fbd1d48d551f74b0775b6dedcf51" target="_blank">25038af</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomchj1arweeklyreport2019071521treed1549f5d716bafdb3d4ff19b37bc92e51922288atargetblankd1549f5a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomchj1arweeklyreport2019071521tree25038afc6299fbd1d48d551f74b0775b6dedcf51targetblank25038afa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility. The version displayed above was the version of the Git repository at the time these results were generated. <br><br> Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -376,6 +376,15 @@ Great! You are using Git for version control. Tracking code development and conn
 Ignored files:
     Ignored:    .DS_Store
     Ignored:    .Rhistory
+
+Untracked files:
+    Untracked:  GWAS_lipid_traits.tar.gz
+    Untracked:  code/Enloc_GWAS.sh
+    Untracked:  code/lipidGWAS2Torus.sh
+    Untracked:  code/plot_enrichment.R
+
+Unstaged changes:
+    Modified:   code/README.md
 
 </code></pre>
 <p>
@@ -414,6 +423,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/chj1ar/weekly_report20190715-21/blob/25038afc6299fbd1d48d551f74b0775b6dedcf51/analysis/index.Rmd" target="_blank">25038af</a>
+</td>
+<td>
+chj1ar
+</td>
+<td>
+2019-08-15
+</td>
+<td>
+wflow_git_commit(files = c(“analysis/index.Rmd”, “analysis/PIP.Rmd”))
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/chj1ar/weekly_report20190715-21/ec07c223e79e39453ab5041f03e5eb6297ced69a/docs/index.html" target="_blank">ec07c22</a>
+</td>
+<td>
+chj1ar
+</td>
+<td>
+2019-07-27
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -477,6 +520,8 @@ Start workflowr project.
 <ul>
 <li><p><a href="binary.html">SCZ against binary annotations of GTEx eQTLs</a></p></li>
 <li><p><a href="PIP.html">SCZ against PIPs of GTEx eQTLs</a></p></li>
+<li><p><a href="diagnosis_QQplot.html">diagnosis of enrichment analysis by QQ plots</a></p></li>
+<li><p><a href="colocalization.html">colocalization analysis of brain eQTLs on SCZ by Enloc</a></p></li>
 </ul>
 
 
