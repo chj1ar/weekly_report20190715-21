@@ -1,0 +1,37 @@
+---
+title: "diagnosis_QQplot"
+author: "chj1ar"
+date: "2019-08-12"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+This page is to diagnose the problem of the terrible results of using PIP annotations on eQTLs for SCZ.
+
+A good way is to draw QQ plots of the distribution of P-values of eQTL SNPs vs. full GWAS SNPs, since enriched eQTLs will be revealed.
+
+```{r, echo=FALSE}
+library(png)
+QQplot_P20fullGWAS <- readPNG(source = '~/Documents/留学/暑研/Xin/reading_materials/5th/QQplot_P20_fullGWAS.png')
+library(grid)
+grid.raster(QQplot_P20fullGWAS)
+```
+
+Figure 1: the QQ plot of P-values of brain eQTL SNPs with PIP > 0.2 in at least one brain tissue (blue) vs. full GWAS SNPs (black).
+
+It is evident that there are few SNPs enriched in brain eQTLs, indicating little enrichment of brain eQTLs.
+
+Also, almost all GWAS hits are not brain eQTLs, which is reasonable though. Briefly speaking, gene expression is just one aspect for SCZ, and there are other aspects like protein production, various modifications, and stages like infants and adults.
+
+In addition, the most significant eQTL SNPs, defined as PIP > 0.5 in at least one brain tissue, are not so significant GWAS hits, and on the other hand, some less significant eQTL SNPs, such as those with PIP between 0.2 and 0.5, are significant GWAS hits, shown in Figure 2.
+
+```{r, echo=FALSE}
+library(png)
+QQplot_P50P20 <- readPNG(source = '~/Documents/留学/暑研/Xin/reading_materials/5th/QQplot_P50_P20.png')
+library(grid)
+grid.raster(QQplot_P50P20)
+```
+
+Figure 2: the QQ plot of P-values of brain eQTL SNPs with PIP > 0.5 (orange) and PIP > 0.2 (blue) in at least one brain tissue.
+
