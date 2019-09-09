@@ -1,5 +1,5 @@
 ---
-title: "Binary and PIP"
+title: "Enrichment and Colocalization"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -8,7 +8,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-This project is about enrichment analysis of 44 tissues of eQTL in GTEx, which is performed in 2 ways. One is performed in binary annotations, and the other is in PIPs, i.e., continuous annotations.
+This project consists of two parts, enrichment analysis and colocalization analysis. Enrichment analysis is performed on 44 tissues of eQTL in GTEx in 2 ways. One is performed in binary annotations, and the other is in PIPs, i.e., continuous annotations. Then, there should be diagnosis of enrichment analysis by QQ plots if there are too few eQTL SNPs. After that, we use Enloc to perform enrichment analysis and colocalization analysis, but first we need to prepare necessary data.
 
 Please see the results as follows.
 
@@ -19,3 +19,7 @@ Please see the results as follows.
 * [diagnosis of enrichment analysis by QQ plots](diagnosis_QQplot.html)
 
 * [colocalization analysis of brain eQTLs on SCZ by Enloc](colocalization.html)
+
+* [generating individual-level genotype-expression data](https://github.com/chj1ar/fine-mapping/)
+
+If you are interested in the code, please find it in `code/`.
