@@ -6,11 +6,22 @@ output: workflowr::wflow_html
 editor_options:
   chunk_output_type: console
 ---
+# Goal
+Diagnose whether there are too few eQTL SNPs in the eQTL PIP data.
 
-This page is to diagnose the problem of the terrible results of using PIP annotations on eQTLs for SCZ.
+# Background
+As the result of the enrichment analysis using eQTL PIP data showed, the credible intervals of $\alpha_1$ were too large, suggesting that there were probably too few eQTL SNPs.
 
-A good way is to draw QQ plots of the distribution of P-values of eQTL SNPs vs. full GWAS SNPs, since enriched eQTLs will be revealed.
+# Methods
+Select the SNPs whose eQTL PIPs are more than a pre-specified PIP threshold as the eQTL SNPs. Select all SNPs in the GWAS data as the full GWAS. For each set of selected SNPs, draw a QQ plot of log(GWAS P-values) of the SNPs (i.e., Observed log(GWAS P-values)) vs. log(GWAS P-values) where P-values follow the standard uniform distribution (i.e., Expected log(GWAS P-values)). Then visually compare the 2 QQ plots. If the 2 curves are very close, then there are too few eQTL SNPs.
 
+# Input
+GWAS data, eQTL PIP data
+
+# Output
+QQ plots: Observed log(GWAS P-values) vs. Expected log(GWAS P-values)
+
+# Results
 ```{r, echo=FALSE}
 library(png)
 QQplot_P20fullGWAS <- readPNG(source = '~/Documents/留学/暑研/Xin/reading_materials/5th/QQplot_P20_fullGWAS.png')
