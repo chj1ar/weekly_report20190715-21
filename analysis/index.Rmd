@@ -8,9 +8,9 @@ editor_options:
   chunk_output_type: console
 ---
 
-This project consists of two parts, enrichment analysis and colocalization analysis. Enrichment analysis is performed on 44 tissues of eQTL in GTEx in 2 ways. One is performed in binary annotations, and the other is in PIPs, i.e., continuous annotations. Then, there should be diagnosis of enrichment analysis by QQ plots if there are too few eQTL SNPs. After that, we use Enloc to perform enrichment analysis and colocalization analysis, but first we need to prepare necessary data.
+This project consists of two parts, enrichment analysis and colocalization analysis. Enrichment analysis is performed on 44 tissues of eQTL in GTEx in 2 ways. One is performed in binary annotations, and the other is in PIPs, i.e., continuous annotations. Then, there should be diagnosis of enrichment analysis by QQ plots if there are too few eQTL SNPs. After that, we use Enloc to perform enrichment estimation aided colocalization analysis, but first we need to prepare necessary data.
 
-Please see the results as follows.
+Please find the details as follows.
 
 * [SCZ against binary annotations of GTEx eQTLs](binary.html)
 
