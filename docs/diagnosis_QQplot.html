@@ -407,7 +407,7 @@ div.section {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2019-08-15
+<strong>Last updated:</strong> 2019-11-17
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -498,10 +498,10 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomchj1arweeklyreport2019071521tree2acb785860df179f6f842b7cf23dae267d23311etargetblank2acb785a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/chj1ar/weekly_report20190715-21/tree/2acb785860df179f6f842b7cf23dae267d23311e" target="_blank">2acb785</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomchj1arweeklyreport2019071521treeae3a7b1c66544538c678eb38137256bcfeec712btargetblankae3a7b1a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/chj1ar/weekly_report20190715-21/tree/ae3a7b1c66544538c678eb38137256bcfeec712b" target="_blank">ae3a7b1</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomchj1arweeklyreport2019071521tree2acb785860df179f6f842b7cf23dae267d23311etargetblank2acb785a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomchj1arweeklyreport2019071521treeae3a7b1c66544538c678eb38137256bcfeec712btargetblankae3a7b1a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility. The version displayed above was the version of the Git repository at the time these results were generated. <br><br> Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -510,13 +510,9 @@ Great! You are using Git for version control. Tracking code development and conn
 Ignored files:
     Ignored:    .DS_Store
     Ignored:    .Rhistory
-
-Untracked files:
-    Untracked:  docs/figure/colocalization.Rmd/
-
-Unstaged changes:
-    Modified:   analysis/PIP.Rmd
-    Modified:   analysis/index.Rmd
+    Ignored:    .Rproj.user/
+    Ignored:    code/.DS_Store
+    Ignored:    code/QQplots/.ipynb_checkpoints/
 
 </code></pre>
 <p>
@@ -560,6 +556,40 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/chj1ar/weekly_report20190715-21/blob/ae3a7b1c66544538c678eb38137256bcfeec712b/analysis/diagnosis_QQplot.Rmd" target="_blank">ae3a7b1</a>
+</td>
+<td>
+chj1ar
+</td>
+<td>
+2019-11-17
+</td>
+<td>
+wflow_publish(files = &quot;analysis/*&quot;)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/chj1ar/weekly_report20190715-21/1be5e27333037fd3ff6cbfbd64d45fa7e066c2c1/docs/diagnosis_QQplot.html" target="_blank">1be5e27</a>
+</td>
+<td>
+chj1ar
+</td>
+<td>
+2019-08-15
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/chj1ar/weekly_report20190715-21/blob/2acb785860df179f6f842b7cf23dae267d23311e/analysis/diagnosis_QQplot.Rmd" target="_blank">2acb785</a>
 </td>
 <td>
@@ -579,14 +609,108 @@ wflow_publish(files = c(“analysis/colocalization.Rmd”,
 </div>
 </div>
 </div>
-<p>This page is to diagnose the problem of the terrible results of using PIP annotations on eQTLs for SCZ.</p>
-<p>A good way is to draw QQ plots of the distribution of P-values of eQTL SNPs vs. full GWAS SNPs, since enriched eQTLs will be revealed.</p>
+<div id="goal" class="section level1">
+<h1>Goal</h1>
+<p>Diagnose whether there are too few eQTL SNPs in the eQTL PIP data.</p>
+</div>
+<div id="background" class="section level1">
+<h1>Background</h1>
+<p>As the result of the enrichment analysis using eQTL PIP data showed, the credible intervals of <span class="math inline">\(\alpha_1\)</span> were too large, suggesting that there were probably too few eQTL SNPs.</p>
+</div>
+<div id="methods" class="section level1">
+<h1>Methods</h1>
+<p>Select the SNPs whose eQTL PIPs are more than a pre-specified PIP threshold as the eQTL SNPs. Select all SNPs in the GWAS data as the full GWAS. For each set of selected SNPs, draw a QQ plot of log(GWAS P-values) of the SNPs (i.e., Observed log(GWAS P-values)) vs. log(GWAS P-values) where P-values follow the standard uniform distribution (i.e., Expected log(GWAS P-values)). Then visually compare the 2 QQ plots. If the 2 curves are very close, then there are too few eQTL SNPs.</p>
+</div>
+<div id="input" class="section level1">
+<h1>Input</h1>
+<p>GWAS data, eQTL PIP data</p>
+</div>
+<div id="output" class="section level1">
+<h1>Output</h1>
+<p>QQ plots: Observed log(GWAS P-values) vs. Expected log(GWAS P-values)</p>
+</div>
+<div id="results" class="section level1">
+<h1>Results</h1>
 <p><img src="figure/diagnosis_QQplot.Rmd/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-1-1">
+Past versions of unnamed-chunk-1-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-1-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/chj1ar/weekly_report20190715-21/blob/1be5e27333037fd3ff6cbfbd64d45fa7e066c2c1/docs/figure/diagnosis_QQplot.Rmd/unnamed-chunk-1-1.png" target="_blank">1be5e27</a>
+</td>
+<td>
+chj1ar
+</td>
+<td>
+2019-08-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Figure 1: the QQ plot of P-values of brain eQTL SNPs with PIP &gt; 0.2 in at least one brain tissue (blue) vs. full GWAS SNPs (black).</p>
 <p>It is evident that there are few SNPs enriched in brain eQTLs, indicating little enrichment of brain eQTLs.</p>
 <p>Also, almost all GWAS hits are not brain eQTLs, which is reasonable though. Briefly speaking, gene expression is just one aspect for SCZ, and there are other aspects like protein production, various modifications, and stages like infants and adults.</p>
 <p>In addition, the most significant eQTL SNPs, defined as PIP &gt; 0.5 in at least one brain tissue, are not so significant GWAS hits, and on the other hand, some less significant eQTL SNPs, such as those with PIP between 0.2 and 0.5, are significant GWAS hits, shown in Figure 2.</p>
 <p><img src="figure/diagnosis_QQplot.Rmd/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-2-1">
+Past versions of unnamed-chunk-2-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-2-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/chj1ar/weekly_report20190715-21/blob/1be5e27333037fd3ff6cbfbd64d45fa7e066c2c1/docs/figure/diagnosis_QQplot.Rmd/unnamed-chunk-2-1.png" target="_blank">1be5e27</a>
+</td>
+<td>
+chj1ar
+</td>
+<td>
+2019-08-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Figure 2: the QQ plot of P-values of brain eQTL SNPs with PIP &gt; 0.5 (orange) and PIP &gt; 0.2 (blue) in at least one brain tissue.</p>
 <br>
 <p>
@@ -615,11 +739,12 @@ other attached packages:
 [1] png_0.1-7
 
 loaded via a namespace (and not attached):
- [1] workflowr_1.4.0 Rcpp_1.0.1      digest_0.6.20   rprojroot_1.3-2
+ [1] workflowr_1.4.0 Rcpp_1.0.2      digest_0.6.20   rprojroot_1.3-2
  [5] backports_1.1.4 git2r_0.26.1    magrittr_1.5    evaluate_0.14  
  [9] stringi_1.4.3   fs_1.3.1        whisker_0.3-2   rmarkdown_1.14 
 [13] tools_3.6.0     stringr_1.4.0   glue_1.3.1      xfun_0.8       
 [17] yaml_2.2.0      compiler_3.6.0  htmltools_0.3.6 knitr_1.23     </code></pre>
+</div>
 </div>
 
 
