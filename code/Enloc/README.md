@@ -6,7 +6,7 @@ Please find the introduction [here](https://chj1ar.github.io/weekly_report201907
 
 `lipidGWAS2Torus.sh`: convert the lipid GWAS data to what Torus requires.
 
-`~/Enloc/Enloc_GWAS.sh`: convert Torus GWAS format to Enloc GWAS format.
+`Enloc_GWAS.sh`: convert Torus GWAS format to Enloc GWAS format.
 
 ### lipidGWAS2Torus.sh
 
