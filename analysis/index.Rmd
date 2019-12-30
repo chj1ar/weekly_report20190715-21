@@ -22,4 +22,4 @@ Please find the details as follows.
 
 * [generating individual-level genotype-expression data](https://github.com/chj1ar/fine-mapping/)
 
-If you are interested in the code, please find it in `code/`.
+If you are interested in the code, please find it in [`code/`](https://github.com/chj1ar/weekly_report20190715-21/tree/master/code/).

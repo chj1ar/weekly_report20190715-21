@@ -29,6 +29,14 @@ $$\alpha_1 = log \frac {p_{12} (1 - p_1 - p_2 - p_{12})}{p_1 p_2}$$
 
 Plus, $\alpha_1$ is learned by whole-genome SNPs, with the idea of empirical Bayes.
 
+## Input
+
+Molecular QTL data, GWAS data (specifically, QTL configurations and GWAS summary association statistics)
+
+## Output
+
+enrichment estimation, GWAS PIP, colocalization probabilities
+
 ## Results
 
 Before showing the results on SCZ, it'd be better to show the correctness of the pipeline by reproducing the Figure 5 of the Enloc paper. Specifically, we performed enrichment analysis of GTEx Whole Blood eQTLs data on 4 lipid traits, namely, high density lipoprotein (HDL), low density lipoprotein (LDL), triglycerides (TG), and total cholesterol (TC), and the following figure, Figure 1, shows the results.
